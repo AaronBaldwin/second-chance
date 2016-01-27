@@ -1,0 +1,26 @@
+{
+  "name": "second-chance",
+  "version": "1.0.0",
+  "description": "dialogue runner for second-chance game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronBaldwin/second-chance.git"
+  },
+  "keywords": [
+    "second",
+    "chance",
+    "mage",
+    "story",
+    "html"
+  ],
+  "author": "AngryPidgeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AaronBaldwin/second-chance/issues"
+  },
+  "homepage": "https://github.com/AaronBaldwin/second-chance#readme"
+}
