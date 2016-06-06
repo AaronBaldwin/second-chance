@@ -1,0 +1,73 @@
+Node 1
+  Self: Something went wrong.  Even the most vetted plans are prone to overlooking a minor detail.  Perhaps it was a minor detail that sunk the Titanic.
+  Self: Such is the way of magic.  Its the unspoken first law of spellcasting that if something can go wrong it will, and at the worst possible time.  With time-magic especially, things go poorly.  Even the best magical scholars can't precisely predict the effects of small ripples in time.
+  Self: I have to focus.  This undertaking is bigger than me.  My name is Mark and I'm going back to assassinate an evil world power.
+  Self: Deep breath...shit.
+  The world is spinning around you.  You gasp for breath, getting only a little.
+  The wind has been knocked out of you and you close your eyes.
+  A moment later you take a deep breath, shielding your eyes from a piercing light.  The scene forms around you.
+  Loud country-style music twangs accross the room.  A sea of people surround you, many now wearing concerned looks.
+  A bar...  A busy one at that.  Some rusted out shotgun is sitting on a mantle on the opposite wall.
+  Bartender: Get him out of here, he's had too much to drink!
+  A hand extends towards you.  Following it to the source, a young guy with wiry brown hair, you instinctively reach out and clasp it.
+   Thanks
+    2
+   Who_are_you?
+    3
+
+Node 2
+  Self: Thank you.
+  ???: Come on, let's go.
+  He pulls you up.
+  ???: Are you sure you are drunk?  You are walking just fine.
+  Int: He's right.  I don't feel drunk, I feel as if the wind was knocked out of me.  But how did I get here then?
+  Alexi: I'm Alexi, by the way.
+   cont
+    4
+
+Node 3
+ this.literallywho
+  Self: Who are you?
+  He frowns lightly and looks away.
+  Alexi: A question better asked of you.  I'm Alexi.
+  Bartender: HEY! You have to go!  Don't make me call security!
+  Alexi snaps back to attention then shakes his head lightly.
+  Alexi: Lets go.
+   cont
+    4
+
+Node 4
+  Alexi navigates through the crowd, shoving his way past several drunks.
+  Int: For a small-framed guy, he is fairly strong.
+  Alexi approaches the front door which is thick, wooden, and sporting a horseshoe for its handle.
+  He leans into the door and pushes it open before looking back at you and walking out.
+  The night air is warm, a sobering gust crashes over you.  The street is compact and there are several shops nearby.  It appears to be the downtown area of a mid-sized city.  The smell of tobacco catches your attention; Alexi has produced an American Spirit cigarette.
+  Alexi: What's your name?
+  Int: My name...I think it's Mark, though I'm having a hard time remembering anything else about myself.
+  Int: Where I live?  I was born in California...the outskirts of San Diego.  I grew up there.  
+   I'm_fairly_sure_It's_Mark
+    5
+   I'm_Mark
+    6
+
+Node 5
+  Self: I think my name is Mark, but I'm not sure
+  Alexi: Really, you aren't sure?
+  Self: I don't know where I am or how I got here
+   cont
+    7
+
+Node 6
+ reputation.Alexi+1
+  Self: I'm Mark.
+  Alexi takes a drag from his cigarette, turns to you, and nods.
+   cont
+    7
+
+Node 7
+ Some noisy college kids stumble out of the bar.
+ Alexi: We shouldn't talk here.
+ He smiles politely at you and points casually off into the distance at nothing in particular.
+ Self: Strange..
+ Alexi: 
+

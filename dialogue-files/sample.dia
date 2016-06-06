@@ -1,0 +1,18 @@
+Node 1
+ skills.thaumaturgy.1
+ milestones.ancientRod
+ reputation.alexi.-1
+ this.availableAlexi
+  Narrator: Alexi hands over the item slowly, giving it one last look before turning to you.
+  Alexi: Don't fuck this up
+   I_won't skills.thaumaturgy.1 skills.deception.5
+    1 skills.thaumaturgy.4 skills.metamagic.2
+    2 skills.thaumaturgy.2
+    3 skills.deception.4 
+   Don't_expect_anything
+    5
+
+Node 2
+ skills.deceit.1
+   This_is_the_end
+    6
