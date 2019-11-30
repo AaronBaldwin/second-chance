@@ -1,0 +1,193 @@
+<style>
+  .character-sheet {
+    display: flex;
+    flex-direction: row;
+    border: 5px double black;
+    padding: 4px;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #FFEBCD;
+  }
+
+  .character-sheet >div {
+    margin: 0 20px;
+  }
+
+  .right {
+    flex: 1;
+  }
+
+  .header {
+    flex: 1;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .skill-group {
+    width: 266px;
+    margin: 0 15px;
+  }
+
+  .skill-group .progress-bar {
+    position: relative;
+    width: 130px;
+    height: 20px;
+    border-radius: 9px;
+    background: linear-gradient(to right, #1a1aff, #e67300);
+    border: 2px solid darkslategray;
+    overflow: hidden;
+  }
+
+  .skill-group h1 {
+    font-size: 1.5em;
+    text-align:center;
+  }
+
+  .progress-bar .overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 130px;
+    height: 20px;
+    border-radius: 0 7px 7px 0;
+    background: floralwhite;
+    transition: width 1s;
+  }
+
+  .skill-group table td {
+    font-weight: bold;
+  }
+
+  .skill-group table td:first-child {
+    min-width: 108px;
+  }
+
+  .line-entry {
+    min-width: 200px;
+  }
+
+  .line-entry * {
+    margin: 0;
+  }
+
+  .line-entry p:first-child {
+    font-family: Cursive;
+    text-align: center;
+    font-size: 1.3em;
+  }
+  
+  .line-entry p:last-child {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+  .bio {
+    max-width: 300px;
+  }
+
+  .items {
+    max-width: 300px;
+  }
+
+  .items hr {
+    margin: 0;
+  }
+
+  .items h1 {
+    margin-bottom: 2px;
+  }
+
+  .items p {
+    font-family: Cursive;
+    margin: 0;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script>
+  function setSkill(name, newSkillValue) {
+    const baseWidth = 130;
+    const increment = 13;
+    let overlayWidth = baseWidth - (newSkillValue * increment);
+    $(`.skill-group .${name} .overlay`).css('width', overlayWidth);
+    $(`.skill-group .${name} td:last-child`).text(newSkillValue);
+  }
+</script>
+
+<div class='character-sheet'>
+
+
+  <div class='header'>
+
+    <div class='bio'>
+      <div class='line-entry'>
+        <p>Mark</p>
+        <hr/>
+        <p>Character Name</p>
+      </div>
+      <div class='line-entry'>
+        <p>Diplomat</p>
+        <hr/>
+        <p>Background</p>
+      </div>
+      <div class='line-entry'>
+          <p>$50.00</p>
+          <hr/>
+          <p>Cash</p>
+        </div>
+    </div>
+
+    <div class='items'>
+      <h1>Items</h1>
+      <p>Rod of Blasting</p>
+      <hr/>
+      <p>Alexi's Honda CB750 Key</p>
+      <hr/>
+    </div>
+  </div>
+
+  <div class='right'>
+  <div class='skills'>
+    <div class='skill-group'>
+      <h1>Social</h1>
+        <table><tbody>
+          <tr class='deceit'><td>Deceit</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+          <tr class='stealth'><td>Stealth</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+          <tr class='empathy'><td>Empathy</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+          <tr><td>Leadership</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+        </tbody></table>
+    </div>
+    <div class='skill-group'>
+      <h1>Disciplinary</h1>
+      <table><tbody>
+        <tr><td>FirstAid</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+        <tr><td>Driving</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+        <tr><td>Lockpicking</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+        <tr><td>Technology</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+      </tbody></table>
+    </div>
+    <div class='skill-group'>
+        <h1>Physical</h1>
+          <table><tbody>
+            <tr><td>Brawling</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+            <tr><td>Firearms</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+            <tr><td>Focus</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+            <tr><td>Reflexes</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+          </tbody></table>
+      </div>
+    <div class='skill-group'>
+      <h1>Magic</h1>
+      <table><tbody>
+        <tr><td>Ælemental</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+        <tr><td>Mind&Bodý</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+        <tr><td>Šhadow</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+        <tr><td>MetaMagi¢</td><td><div class='progress-bar'><div class='overlay'></div></div></td><td>0</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  </div>
+</div>

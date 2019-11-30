@@ -1,161 +1,132 @@
+<style>
+  .second-chance {
+    display: grid;
+    grid-template-areas: 'header header'
+                         'sidebar main-view';
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr 4fr;
+    height: 100%;
+  }
 
-<!doctype html>
-<html>
-<head>
+  .header {
+    grid-area: header;
 
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    background-color: tan;
+    border-bottom: 2px dashed white;
 
-    <style type="text/css">
+    display: flex;
+    align-items: center;
+  }
 
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+  .sidebar {
+    grid-area: sidebar;
+    font-family: cursive;
+    text-align: center;
+    border-right: 1px solid black;
+  }
 
-        #sidebar {
-            height: 100%;
-            width: 15%;
-            float: left;
-        }
+  .sidebar >div {
+    padding: 20px 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
 
-        #menuitems {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+  .sidebar div.selected {
+    background-color: aliceblue;
+  }
 
-        #menuitems li {
-            background-color: #cceeff;
-            text-align: center;
-            cursor: pointer;
-            height: 50px;
-            padding-top: 25px;
-            border: 5px;
-            border-style: ridge;
-            font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
-            font-weight: bold;
-        }
+  .sidebar >div:hover {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+  }
 
-        #mainscreen {
-            background-color: green;
-            float: left;
-            width: 82.36%;
-            margin: 0;
-            padding: 0;
-        }
+  .main-view {
+    grid-area: main-view;
 
-        #rightbar {
-            float: right;
-            height: 508px;
-            width: 17.64%;
-            background-color: #cceeff;
-            margin: 0;
-            padding: 0;
-        }
+    background-color: floralwhite;
+  }
 
-        #skills_main {
-            display: none;
-            background-color: cyan;
-        }
+  .day-display {
+    font-family: cursive;
+    margin: 0 20px;
+  }
 
-        #inventory_main {
-            display: none;
-            background-color: magenta;
-        }
+  .logo {
+    margin: 0 20px;
+  }
 
-        #rightcontainer {
-            background-color: orange;
-            width: 85%;
-            float: right;
-        }
+  body {
+    padding: 0;
+    margin: 0;
+  }
 
-        .clear {
-            clear: both;
-        }
+  .selections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 
-    </style>
+  .continue {
+    border: 4px double black;
+    width: 200px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: white;
+    font-family: cursive;
+    cursor: pointer;
+    border-radius: 5px;
+  }
 
-    <title>Second Chance</title>
+  .continue:hover {
+    box-shadow: 2px 2px 6px;
+  }
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script>
-        
-        // Setup the sidebar so that clicking the items opens the relevant menu
-        $(document).ready(function() {
-            $("#skills").click(function() {
-                $("#mainscreen").children().css('display', 'none')
-                $("#skills_main").css('display', 'block');
-            });
+</style>
 
-            $("#inventory").click(function() {
-                $("#mainscreen").children().css('display', 'none')
-                $("#inventory_main").css('display', 'block');
-            });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+  function narrate(text) {
+    $('.text-wrapper').text(text)
+  }
 
-            $("#game").click(function() {
-                $("#mainscreen").children().css('display', 'none')
-                $("#game_main").css('display', 'block');
-            });
+  function setPicture(url) {
+    $('.picture-wrapper img').attr('src', url);
+  }
 
-            $("#contacts").click(function() {
-                $("#mainscreen").children().css('display', 'none')
-                $("#contacts_main").css('display', 'block');
-            });
+  function presentChoices(choices) {
 
-            $("#facts").click(function() {
-                $("#mainscreen").children().css('display', 'none')
-                $("#facts_main").css('display', 'block');
-            });
+  }
 
-            $("#log").click(function() {
-                $("#mainscreen").children().css('display', 'none')
-                $("#log_main").css('display', 'block');
-            });
-        });
-    </script>
-</head>
+  function electChoice(choice) {
 
-<body>
+  }
+</script>
 
-<div>
-<div id="sidebar">
-    <ul id="menuitems">
-        <li id="game">Resume Game</li>
-        <li id="inventory">Inventory</li>
-        <li id="skills">Skills</li>
-        <li id="contacts">Contacts</li>
-        <li id="facts">Gathered Facts</li>
-        <li id="log">Log</li>
-    </ul>
-</div>
-
-<div id="rightcontainer">
-    <div id="mainscreen">
-        <div class="clear"></div>
-
-        <div id="game_main"></div>
-        <div id="skills_main">
-            <p>These are skills</p>
-            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                <span class="sr-only">70% Complete</span>
-            </div>
-        </div>
-        <div id="inventory_main"></div>
-        <div id="contacts_main"></div>
-        <div id="facts_main"></div>
-        <div id="log_main"></div>
+<div class='second-chance'>
+  <div class='header'>
+    <div class='logo'>Second Chance</div>
+    <div class='day-display'>Day: 1</div>
+  </div>
+  <div class='sidebar'>
+    <div>
+      Resume Game
     </div>
-    <div id="rightbar"></div>
+    <div class='selected'>
+      Character Sheet
+    </div>
+    <div>
+      Transcript
+    </div>
+  </div>
+  <div class='main-view'>
+    <div class='picture-wrapper'>
+
+    </div>
+    <div class='text-wrapper'>
+
+    </div>
+    <div class='selections'>
+      <div class='continue'>Continue</div>
+    </div>
+  </div>
 </div>
-</div>
-
-
-
-
-
-</body>
-</html>
